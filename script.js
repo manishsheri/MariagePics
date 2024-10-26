@@ -6,6 +6,9 @@ fetch('/api/image_urls.php')
     return response.json();
   })
   .then(data => {
+    if (data.error) {
+      throw new Error(data.error);
+    }
     const galleryDiv = document.querySelector(".image-gallery");
 
     data.imageUrls.forEach(url => {

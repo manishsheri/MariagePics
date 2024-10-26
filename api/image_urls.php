@@ -24,11 +24,16 @@ try {
     foreach ($files2 as $file) {
         $imageUrls[] = $file->getUrl();
     }
+    
+    header("Access-Control-Allow-Origin: *");
+    header('Content-Type: application/json');
+    echo json_encode(['imageUrls' => $imageUrls]);
+    
 } catch (Exception $e) {
     // Handle exceptions, e.g., log the error or display an error message
-    echo 'Error fetching files: ' . $e->getMessage();
+    // Return an error response in JSON format
+    header("Access-Control-Allow-Origin: *");
+    header('Content-Type: application/json', true, 500);
+    echo json_encode(['error' => 'Error fetching files: ' . $e->getMessage()]);
 }
 
-header("Access-Control-Allow-Origin: *");
-header('Content-Type: application/json');
-echo json_encode(['imageUrls' => $imageUrls]);
