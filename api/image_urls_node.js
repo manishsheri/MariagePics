@@ -1,6 +1,8 @@
 const { B2 } = require('backblaze-b2');
 
 module.exports = async (req, res) => {
+    console.log('This is B2' + B2);
+    console.log('This is res' + res);
     const b2 = new B2({
         applicationKeyId: '003736d91ee66540000000004',
         applicationKey: 'K003EcP49X39P7wch65IKI1pDEK37sU'
