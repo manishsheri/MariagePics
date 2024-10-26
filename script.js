@@ -1,4 +1,4 @@
-fetch('https://s3.eu-central-003.backblazeb2.com/image-urls.json')
+fetch('https://mariage-pics.vercel.app/image-urls.json')
   .then(response => {
     if (!response.ok) {
       throw new Error('Network response was not ok');
