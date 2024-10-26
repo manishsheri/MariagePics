@@ -4,8 +4,8 @@ require 'vendor/autoload.php';
 use BackblazeB2\Client;
 
 $client = new Client([
-    'applicationKeyId' => '003736d91ee66540000000003',
-    'applicationKey' => 'K003fpvDi3rZxjj/i1BKLEg0svGA7u0'
+    'applicationKeyId' => getenv('APPLICATION_KEY_ID'),
+    'applicationKey' => getenv('APPLICATION_KEY')
 ]);
 
 $bucket1 = $client->bucket('Enagement-Pics1');
