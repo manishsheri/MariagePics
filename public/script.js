@@ -1,4 +1,4 @@
-fetch('/api/image_urls_node')
+fetch('/api/URL_node')
   .then(response => {
     if (!response.ok) {
       throw new Error('Network response was not ok');
