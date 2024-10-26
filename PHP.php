@@ -29,7 +29,7 @@ try {
     echo 'Error fetching files: ' . $e->getMessage();
 }
 // Add CORS header
-header('Access-Control-Allow-Origin: https://mariage-pics.vercel.app/');
+header('Access-Control-Allow-Origin: https://mariage-pics.vercel.app');
 
 header('Content-Type: application/json');
 echo json_encode(['imageUrls' => $imageUrls]);
