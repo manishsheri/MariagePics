@@ -1,5 +1,5 @@
-// const { B2 } = require('backblaze-b2');
-import { B2 } from 'backblaze-b2';
+const { B2 } = require('backblaze-b2');
+// import { B2 } from 'backblaze-b2';
 
 module.exports = async (req, res) => {
     console.log('This is B2' + B2);
