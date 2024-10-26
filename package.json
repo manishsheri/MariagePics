@@ -1,6 +1,6 @@
 {
     "scripts": {
-        "build": "echo 'No build step required'"
+        "build": "npm install"
     },
     "dependencies": {
         "backblaze-b2": "^1.0.0"
