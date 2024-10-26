@@ -3,6 +3,8 @@
         "build": "npm install"
     },
     "dependencies": {
-        "backblaze-b2": "^1.0.0"
+        "backblaze-b2": "^1.0.0",
+         "axios": "^0.27.2",
+    "express": "^4.18.2"
     }
 }
