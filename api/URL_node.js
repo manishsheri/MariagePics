@@ -5,9 +5,9 @@ const app = express();
 const port = 3000; // Port for the server
 
 // Configuration
-const accountId = 'YOUR_ACCOUNT_ID'; // Your Backblaze B2 account ID
-const appKey = 'YOUR_APP_KEY'; // Your Backblaze B2 application key
-const bucketNames = ['YOUR_BUCKET_NAME_1', 'YOUR_BUCKET_NAME_2']; // Your B2 bucket names
+const accountId = '003736d91ee66540000000004'; // Your Backblaze B2 account ID
+const appKey = 'K003EcP49X39P7wch65IKI1pDEK37sU'; // Your Backblaze B2 application key
+const bucketNames = ['Enagement-Pics1', 'Enagement-Pics2']; // Your B2 bucket names
 const baseUrl = 'https://api.backblazeb2.com'; // Base URL for B2 API
 
 // Step 1: Get Authorization Token
@@ -64,3 +64,4 @@ app.get('/stream', async (req, res) => {
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}/`);
 });
+
