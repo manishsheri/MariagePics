@@ -1,4 +1,4 @@
-fetch('/api/URL_node')
+fetch('/api/image_urls_node')
   .then(response => {
     if (!response.ok) {
       throw new Error('Network response was not ok');
@@ -16,8 +16,9 @@ fetch('/api/URL_node')
       img.src = url;
       img.alt = "Gallery Image";
       img.onerror = () => {
-        img.src = 'error.jpg'; // Replace 'error.jpg' with a default error image
+        // img.src = 'error.jpg'; // Replace 'error.jpg' with a default error image
         img.alt = 'Image loading failed';
+        console.error(`Failed to load image at ${url}`);
       };
       galleryDiv.appendChild(img);
     });
