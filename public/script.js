@@ -20,11 +20,15 @@ fetch('/api/image_urls_node')
         img.alt = 'Image loading failed';
         console.error(`Failed to load image at ${url}`);
       };
+      // Create a container for each image and its filename
+    const imageContainer = document.createElement('div');
+    imageContainer.classList.add('image-container');
       const caption = document.createElement('p');
       caption.textContent = url.name;
-      galleryDiv.appendChild(img);
-      galleryDiv.appendChild(caption);
-      gallery.appendChild(galleryDiv);
+      // Append image and caption to container, then to gallery
+    imageContainer.appendChild(img);
+    imageContainer.appendChild(caption);
+    gallery.appendChild(imageContainer);
     });
   })
   .catch(error => {
