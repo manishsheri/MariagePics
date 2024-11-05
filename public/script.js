@@ -21,7 +21,7 @@ fetch('/api/image_urls_node')
         console.error(`Failed to load image at ${url}`);
       };
       const caption = document.createElement('p');
-      caption.textContent = image.name;
+      caption.textContent = url.name;
       galleryDiv.appendChild(img);
       imageContainer.appendChild(caption);
       gallery.appendChild(imageContainer);
