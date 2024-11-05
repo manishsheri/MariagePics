@@ -31,7 +31,7 @@ fetch('/api/image_urls_node')
 
       // Create the caption with filename
       const caption = document.createElement('p');
-      caption.textContent = url.name || 'Unnamed image';
+      caption.textContent = url.fileName || 'Unnamed image';
 
       // Append image and caption to container, then to gallery
       imageContainer.appendChild(img);
