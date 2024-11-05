@@ -6,29 +6,37 @@ fetch('/api/image_urls_node')
     return response.json();
   })
   .then(data => {
-    if (data.error) {
-      throw new Error(data.error);
+    // Check if 'data.imageUrls' is defined and an array
+    if (!data.imageUrls || !Array.isArray(data.imageUrls)) {
+      throw new Error('Image URLs data is missing or not in expected format.');
     }
+
     const galleryDiv = document.querySelector(".image-gallery");
 
     data.imageUrls.forEach(url => {
+      // Create a container for each image and its filename
+      const imageContainer = document.createElement('div');
+      imageContainer.classList.add('image-container');
+
+      // Create the image element
       const img = document.createElement('img');
       img.src = url.src;
-      img.alt = url.name;
+      img.alt = url.name || 'Image';
+      
+      // Handle image loading errors
       img.onerror = () => {
-        // img.src = 'error.jpg'; // Replace 'error.jpg' with a default error image
         img.alt = 'Image loading failed';
-        console.error(`Failed to load image at ${url}`);
+        console.error(`Failed to load image at ${url.src}`);
       };
-      // Create a container for each image and its filename
-    const imageContainer = document.createElement('div');
-    imageContainer.classList.add('image-container');
+
+      // Create the caption with filename
       const caption = document.createElement('p');
-      caption.textContent = url.name;
+      caption.textContent = url.name || 'Unnamed image';
+
       // Append image and caption to container, then to gallery
-    imageContainer.appendChild(img);
-    imageContainer.appendChild(caption);
-    galleryDiv.appendChild(imageContainer);
+      imageContainer.appendChild(img);
+      imageContainer.appendChild(caption);
+      galleryDiv.appendChild(imageContainer);
     });
   })
   .catch(error => {
