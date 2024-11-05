@@ -28,7 +28,7 @@ fetch('/api/image_urls_node')
       // Append image and caption to container, then to gallery
     imageContainer.appendChild(img);
     imageContainer.appendChild(caption);
-    gallery.appendChild(imageContainer);
+    galleryDiv.appendChild(imageContainer);
     });
   })
   .catch(error => {
