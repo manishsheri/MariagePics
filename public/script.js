@@ -13,14 +13,18 @@ fetch('/api/image_urls_node')
 
     data.imageUrls.forEach(url => {
       const img = document.createElement('img');
-      img.src = url;
-      img.alt = "Gallery Image";
+      img.src = url.src;
+      img.alt = url.name;
       img.onerror = () => {
         // img.src = 'error.jpg'; // Replace 'error.jpg' with a default error image
         img.alt = 'Image loading failed';
         console.error(`Failed to load image at ${url}`);
       };
+      const caption = document.createElement('p');
+      caption.textContent = image.name;
       galleryDiv.appendChild(img);
+      imageContainer.appendChild(caption);
+      gallery.appendChild(imageContainer);
     });
   })
   .catch(error => {
