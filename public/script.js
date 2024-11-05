@@ -21,7 +21,7 @@ fetch('/api/image_urls_node')
       // Create the image element
       const img = document.createElement('img');
       img.src = url;
-      img.alt = url.fileName || 'Image';
+      img.alt = url.filename || 'Image';
       
       // Handle image loading errors
       img.onerror = () => {
@@ -31,7 +31,7 @@ fetch('/api/image_urls_node')
 
       // Create the caption with filename
       const caption = document.createElement('p');
-      caption.textContent = url.fileName || 'Unnamed image';
+      caption.textContent = url.filename || 'Unnamed image';
 
       // Append image and caption to container, then to gallery
       imageContainer.appendChild(img);
