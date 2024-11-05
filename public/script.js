@@ -23,8 +23,8 @@ fetch('/api/image_urls_node')
       const caption = document.createElement('p');
       caption.textContent = url.name;
       galleryDiv.appendChild(img);
-      imageContainer.appendChild(caption);
-      gallery.appendChild(imageContainer);
+      galleryDiv.appendChild(caption);
+      gallery.appendChild(galleryDiv);
     });
   })
   .catch(error => {
