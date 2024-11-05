@@ -20,7 +20,7 @@ fetch('/api/image_urls_node')
 
       // Create the image element
       const img = document.createElement('img');
-      img.src = url.src;
+      img.src = url;
       img.alt = url.name || 'Image';
       
       // Handle image loading errors
