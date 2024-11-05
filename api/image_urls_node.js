@@ -32,7 +32,7 @@ module.exports = async (req, res) => {
                 console.log(`Listing files from bucket: ${bucket.bucketName}...`);
                 const bucketFiles = await b2.listFileNames({
                     bucketId: bucket.bucketId,
-                    maxFileCount: 100 // You can adjust this number as needed
+                    maxFileCount: 1000 // You can adjust this number as needed
                 });
 
                 // Map file URLs for the current bucket
