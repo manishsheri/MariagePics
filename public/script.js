@@ -21,7 +21,8 @@ fetch('/api/image_urls_node')
       // Create the image element
       const img = document.createElement('img');
       img.src = url;
-      img.alt = url.filename || 'Image';
+      let array = url.split('/');
+      img.alt = array[array.length-1];
       
       // Handle image loading errors
       img.onerror = () => {
