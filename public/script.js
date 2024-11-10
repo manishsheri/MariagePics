@@ -21,18 +21,17 @@ fetch('/api/image_urls_node')
       // Create the image element
       const img = document.createElement('img');
       img.src = url;
-      let array = url.split('/');
-      img.alt = array[array.length-1];
       
       // Handle image loading errors
       img.onerror = () => {
         img.alt = 'Image loading failed';
         console.error(`Failed to load image at ${url.src}`);
       };
-
+       let array = url.split('/');
+      let imagename = array[array.length-1];
       // Create the caption with filename
       const caption = document.createElement('p');
-      caption.textContent = url.filename || 'Unnamed image';
+      caption.textContent = imagename || 'Unnamed image';
 
       // Append image and caption to container, then to gallery
       imageContainer.appendChild(img);
