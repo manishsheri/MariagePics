@@ -12,8 +12,8 @@
 }
 
 .image-container img {
-  max-width: 100px; /* Adjust size as needed */
-  max-height: 100px;
+  max-width: 1000px; /* Adjust size as needed */
+  max-height: 1000px;
 }
 
 .image-container p {
