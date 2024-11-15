@@ -8,12 +8,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 10px;
+  margin: 8px;
 }
 
 .image-container img {
-  max-width: 1000px; /* Adjust size as needed */
-  max-height: 1000px;
+  max-width: 500px; /* Adjust size as needed */
+  max-height: 500px;
 }
 
 .image-container p {
