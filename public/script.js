@@ -1,3 +1,4 @@
+import { SpeedInsights } from '@vercel/speed-insights/next';
 fetch('/api/image_urls_node')
   .then(response => {
     if (!response.ok) {
