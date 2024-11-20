@@ -1,6 +1,5 @@
 // const { B2 } = require('backblaze-b2');
 
-import { SpeedInsights } from '@vercel/speed-insights/next';
 const B2 = require('backblaze-b2');
 const cors = require('cors');
 // import { B2 } from 'backblaze-b2';
